@@ -1,4 +1,4 @@
-local atl = require "assimp_to_lua" -- make sure the shared library is in the same folder as this file
+local atl = require "assimp_to_love" -- make sure the shared library is in the same folder as this file
 local util = require "util"
 
 function love.load()

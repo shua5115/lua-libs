@@ -16,4 +16,4 @@ elseif(LINUX)
 endif()
 
 add_subdirectory(ExampleLuaLib)
-add_subdirectory(AssimpToLua)
+add_subdirectory(AssimpToLove)

@@ -188,7 +188,7 @@ static luaL_Reg funcs[] = {
     {NULL, NULL}
 };
 
-extern "C" SHARED_EXPORT int luaopen_assimp_to_lua(lua_State *L) {
+extern "C" SHARED_EXPORT int luaopen_assimp_to_love(lua_State *L) {
     luaL_register(L, "assimp_to_lua", funcs);
 
     lua_newtable(L); // table to be put in registry 

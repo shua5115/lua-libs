@@ -28,7 +28,7 @@ namespace AssimpToLove
 
 int import(lua_State *L);
 
-extern "C" SHARED_EXPORT int luaopen_assimp_to_lua(lua_State *L);
+extern "C" SHARED_EXPORT int luaopen_assimp_to_love(lua_State *L);
 
 int convert(lua_State *L, const aiScene *scene);
 

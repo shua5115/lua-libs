@@ -1,1 +1,1 @@
-cp ../build/AssimpToLua/assimp_to_lua.so .
+cp ../build/AssimpToLove/assimp_to_love.so .
