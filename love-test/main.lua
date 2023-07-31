@@ -5,9 +5,9 @@ function love.load()
     print("AssimpToLua functions:")
     util.printRecursive(atl)
     
-    local fd = love.filesystem.newFileData("animation_with_skeleton.fbx")
+    -- local fd = love.filesystem.newFileData("animation_with_skeleton.fbx")
 
-    local scene, errmsg = atl.import(fd, {"target_realtime_quality", "validate_data"})
+    local scene, errmsg = atl.import("animation_with_skeleton.fbx", {"target_realtime_quality", "validate_data"})
     print()
 	if errmsg then
 		print(errmsg)

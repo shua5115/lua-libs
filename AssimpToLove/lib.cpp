@@ -77,7 +77,7 @@ int import(lua_State *L) {
         lua_getfield(L, -1, "filesystem");
         lua_getfield(L, -1, "newFileData");
         lua_pushvalue(L, 1);
-        lua_call(L, 2, 1);
+        lua_call(L, 1, 1);
         // Stack:
         // -3: table love
         // -2: table love.filesystem
