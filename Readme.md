@@ -6,8 +6,8 @@ which then applies to all the libraries.
 
 The lua files precompiled for Windows come from the [love megasource repository](https://github.com/love2d/megasource)
 compiled for the x64 architecture. If you need an x86 version,
-either install Lua for Windows, which installs a 32-bit version of lua by default,
-or compile megasource yourself for your preferred architecture.
+either install Lua for Windows, which installs a 32-bit version of Lua by default,
+or compile Lua yourself for your preferred architecture.
 
 ## Tips
 Let's say you have a library with the name "mylib"
