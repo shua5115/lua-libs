@@ -8,7 +8,10 @@ if (WIN32)
     # At time of writing, these are the default paths after installing Lua for Windows,
     # which installs a 32-bit version of Lua 5.1.
     set(LUA_INCLUDE_DIR "C:/Program Files (x86)/Lua/5.1/include")
-    find_library(LUA_LIBRARY lua51 "C:/Program Files (x86)/Lua/5.1/lib/")
+    #find_library(LUA_LIBRARY lua51 "C:/Program Files (x86)/Lua/5.1/lib/")
+	set(LUA_LIBRARY ${CMAKE_CURRENT_SOURCE_DIR}/lua51.lib)
+
+    message(STATUS "Lua library: " ${LUA_LIBRARY})
 elseif(LINUX)
     find_package(Lua51 REQUIRED)
     # set(LUA_INCLUDE_DIR "/usr/local/include")

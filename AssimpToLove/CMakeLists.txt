@@ -1,6 +1,14 @@
 project(AssimpToLove)
-
-find_package(assimp REQUIRED)
+if (WIN32)
+    # Make sure to set your own directories
+    set(ASSIMP_INCLUDE_DIRS
+        "C:/Program Files/assimp/assimp-5.2.5/include"
+        "C:/Program Files/assimp/assimp-5.2.5/build/include/"
+    )
+    find_library(ASSIMP_LIBRARIES assimp-vc142-mt "C:/Program Files/assimp/assimp-5.2.5/build/lib/Release" REQUIRED)
+elseif (LINUX)
+    find_package(assimp REQUIRED)
+endif()
 
 add_library(assimp_to_love SHARED
     lib.cpp

@@ -462,7 +462,7 @@ int convert(lua_State *L, const aiNode *node) {
     lua_setfield(L, -2, "metadata");
 
     lua_createtable(L, node->mNumMeshes, 0);
-    for (int i = 0; i < node->mNumMeshes; i++) {
+    for (unsigned int i = 0; i < node->mNumMeshes; i++) {
         lua_pushinteger(L, i + 1);
         lua_pushinteger(L, node->mMeshes[i]);
         lua_settable(L, -3);
@@ -1015,7 +1015,7 @@ int convert(lua_State *L, const aiMeshMorphAnim *anim) {
         auto key = anim->mKeys[i];
         lua_pushinteger(L, i + 1);
         lua_createtable(L, key.mNumValuesAndWeights, 0);
-        for (unsigned int j; j < key.mNumValuesAndWeights; j++) {
+        for (unsigned int j = 0; j < key.mNumValuesAndWeights; j++) {
             lua_pushinteger(L, j + 1);
             lua_pushinteger(L, key.mValues[j]);
             lua_settable(L, -3);
@@ -1029,7 +1029,7 @@ int convert(lua_State *L, const aiMeshMorphAnim *anim) {
         auto key = anim->mKeys[i];
         lua_pushinteger(L, i + 1);
         lua_createtable(L, key.mNumValuesAndWeights, 0);
-        for (unsigned int j; j < key.mNumValuesAndWeights; j++) {
+        for (unsigned int j = 0; j < key.mNumValuesAndWeights; j++) {
             lua_pushinteger(L, j + 1);
             lua_pushnumber(L, key.mWeights[j]);
             lua_settable(L, -3);
