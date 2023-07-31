@@ -1,11 +1,12 @@
 project(AssimpToLove)
 if (WIN32)
+    set(ASSIMP_ROOT $ENV{LOCALAPPDATA}/assimp)
     # Make sure to set your own directories
     set(ASSIMP_INCLUDE_DIRS
-        "C:/Program Files/assimp/assimp-5.2.5/include"
-        "C:/Program Files/assimp/assimp-5.2.5/build/include/"
+        "${ASSIMP_ROOT}\\include"
+        "${ASSIMP_ROOT}\\build\\include\\"
     )
-    find_library(ASSIMP_LIBRARIES assimp-vc142-mt "C:/Program Files/assimp/assimp-5.2.5/build/lib/Release" REQUIRED)
+    find_library(ASSIMP_LIBRARIES "assimp-vc142-mt" PATHS "${ASSIMP_ROOT}\\build\\lib\\Release" REQUIRED)
 elseif (LINUX)
     find_package(assimp REQUIRED)
 endif()
