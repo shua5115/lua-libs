@@ -8,5 +8,5 @@ The name "mylualib" will be used as an alias for the name of the library you wan
 1. Create a CMakeLists.txt file with mylualib as a library target.
 2. Ensure you have a Lua static library (.lib on Windows, .a on Linux) and a directory with the lua headers.
 4. Modify the CMakeLists.txt file to link the library and include the directory of headers.
-5. Compile with CMake. Be sure to match the architectures of the compiler and the lua library match.
+5. Compile with CMake. Be sure to match the architechtures of the compiler and the lua library match.
 6. Copy the resulting shared library to the same directory as your Lua files, and require() it.
