@@ -1,0 +1,25 @@
+#ifndef MYLUALIB
+#define MYLUALIB
+
+#if defined(_MSC_VER)
+#	define SHARED_EXPORT __declspec(dllexport)
+#elif defined(__GNUC__) || defined(__clang__)
+#	define SHARED_EXPORT __attribute__((visibility("default")))
+#else
+#	define SHARED_EXPORT
+#endif
+
+extern "C" {
+    #include <lua.h>
+    #include <lualib.h>
+    #include <lauxlib.h>
+}
+
+typedef ptrdiff_t LuaLibInteger;
+
+extern "C" SHARED_EXPORT ptrdiff_t check_int(lua_State *L, int idx);
+extern "C" SHARED_EXPORT ptrdiff_t opt_int(lua_State *L, int idx, ptrdiff_t def);
+extern "C" SHARED_EXPORT int push_integer(lua_State *L, ptrdiff_t val);
+extern "C" SHARED_EXPORT int luaopen_integer(lua_State *L);
+
+#endif // mylualib
