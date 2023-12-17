@@ -6,15 +6,16 @@ if (WIN32)
         "${ASSIMP_ROOT}\\include"
         "${ASSIMP_ROOT}\\build\\include\\"
     )
-    find_library(ASSIMP_LIBRARIES "assimp-vc142-mt" PATHS "${ASSIMP_ROOT}\\build\\lib\\Release" REQUIRED)
+    find_library(ASSIMP_LIBRARIES "assimp-vc142-mt" PATHS "${ASSIMP_ROOT}\\build\\lib\\Release")
 elseif (LINUX)
-    find_package(assimp REQUIRED)
+    find_package(assimp)
 endif()
 
-add_library(assimp_to_love SHARED
-    lib.cpp
-)
-
-set_target_properties(assimp_to_love PROPERTIES PREFIX "")
-target_include_directories(assimp_to_love PRIVATE ${LUA_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIRS})
-target_link_libraries(assimp_to_love PRIVATE ${LUA_LIBRARY} ${ASSIMP_LIBRARIES})
+if (ASSIMP_LIBRARIES EQUAL NOTFOUND) # Gracefully avoid compiling if libraries are not found
+    add_library(assimp_to_love SHARED
+        lib.cpp
+    )
+    set_target_properties(assimp_to_love PROPERTIES PREFIX "")
+    target_include_directories(assimp_to_love PRIVATE ${LUA_INCLUDE_DIR} ${ASSIMP_INCLUDE_DIRS})
+    target_link_libraries(assimp_to_love PRIVATE ${LUA_LIBRARY} ${ASSIMP_LIBRARIES})
+endif()
