@@ -1,5 +1,5 @@
-#ifndef MYLUALIB
-#define MYLUALIB
+#ifndef LUALIBINTEGER
+#define LUALIBINTEGER
 
 #if defined(_MSC_VER)
 #	define SHARED_EXPORT __declspec(dllexport)
