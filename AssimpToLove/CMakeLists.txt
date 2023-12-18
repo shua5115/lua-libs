@@ -11,7 +11,8 @@ elseif (LINUX)
     find_package(assimp)
 endif()
 
-if (ASSIMP_LIBRARIES EQUAL NOTFOUND) # Gracefully avoid compiling if libraries are not found
+if (ASSIMP_LIBRARIES EQUAL "NOTFOUND") # Gracefully avoid compiling if libraries are not found
+else()
     add_library(assimp_to_love SHARED
         lib.cpp
     )
