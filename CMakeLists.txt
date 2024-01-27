@@ -20,4 +20,5 @@ message(STATUS "Lua include dir: " ${LUA_INCLUDE_DIR})
 
 add_subdirectory(ExampleLuaLib)
 add_subdirectory(Integer)
-add_subdirectory(AssimpToLove)
+add_subdirectory(lglm)
+# add_subdirectory(AssimpToLove)
